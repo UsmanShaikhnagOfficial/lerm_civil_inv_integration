@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record id="lerm_invoice_action" model="ir.actions.act_window">
+        <field name="name">Pending for Invoice</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">sample.pending.invoice</field>
+        <field name="view_mode">tree,kanban,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">Pending for Invoice</p>
+        </field>
+
+    </record>
+
+
+    <menuitem id="lerm_invoicing"
+        name="Invoicing"
+        parent="lerm_civil.lerm_root"
+        sequence="30"  />
+
+    <menuitem id="pending_for_invoice"
+        name="Pending for Invoice"
+        parent="lerm_invoicing"
+        action="lerm_invoice_action"
+        sequence="12" />
+
+</odoo>

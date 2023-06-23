@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+<data>
+    <record id="sample_pending_invoice_form" model="ir.ui.view">
+        <field name="name">sample.pending.invoice.form</field>
+        <field name="model">sample.pending.invoice</field>
+        <field name="arch" type="xml">
+            <form>
+            <sheet>
+                <group>
+                    <group>
+                        <field name="srf_id"/>
+                        <field name="customer"/>
+                        <field name="invoiced"/>
+                    </group>
+                    <group>
+                        <field name="kes_no"/>
+                        <field name="pricelist"/>
+                    </group>
+                </group>
+            </sheet>
+            </form>
+        </field>
+    </record> 
+</data>
+</odoo>
+
