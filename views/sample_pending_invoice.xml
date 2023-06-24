@@ -22,6 +22,19 @@
             </form>
         </field>
     </record> 
+    <record id="sample_pending_invoice_tree" model="ir.ui.view">
+        <field name="name">sample.pending.invoice.tree</field>
+        <field name="model">sample.pending.invoice</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="srf_id"/>
+                <field name="customer"/>
+                <field name="invoiced"/>
+                <field name="kes_no"/>
+                <field name="pricelist"/>
+            </tree>
+        </field>
+    </record> 
 </data>
 </odoo>
 
