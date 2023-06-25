@@ -10,8 +10,10 @@
                 <group>
                     <group>
                         <field name="srf_id"/>
+                        <field name="kes_date"/>
                         <field name="customer"/>
                         <field name="invoiced" readonly="1"/>
+
                     </group>
                     <group>
                         <field name="kes_no"/>
@@ -24,6 +26,7 @@
             </form>
         </field>
     </record> 
+    
     <record id="sample_pending_invoice_tree" model="ir.ui.view">
         <field name="name">sample.pending.invoice.tree</field>
         <field name="model">sample.pending.invoice</field>

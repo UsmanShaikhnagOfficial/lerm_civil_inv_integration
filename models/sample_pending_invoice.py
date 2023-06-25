@@ -7,6 +7,7 @@ class SamplePendingInvoice(models.Model):
 
     srf_id = fields.Many2one('lerm.civil.srf',string='SRF ID')
     kes_no = fields.Many2one('lerm.srf.sample',string='KES NO')
+    kes_date = fields.Date(string="KES Date")
     customer = fields.Many2one('res.partner',string="Customer")
     pricelist = fields.Many2one('product.pricelist',string='Pricelist')
     amount = fields.Float(string="Amount")
@@ -51,7 +52,13 @@ class InheritedAllotmentWizard(models.TransientModel):
                         'has_witness':sample.has_witness
                     })
                 sample.write({'state':'2-alloted' , 'technicians':self.technicians.id})
-                self.env['sample.pending.invoice'].sudo().create({'srf_id': sample.srf_id.id ,'kes_no':sample.id, 'customer':sample.srf_id.customer.id })
+                self.env['sample.pending.invoice'].sudo().create({
+                    'srf_id': sample.srf_id.id ,
+                    'kes_no':sample.id, 
+                    'customer':sample.srf_id.customer.id,
+                    'kes_date':sample.sample_received_date,
+                    'amount':sample.price
+                    })
             else:
                 pass
             
