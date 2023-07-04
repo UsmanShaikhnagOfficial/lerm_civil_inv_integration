@@ -68,7 +68,7 @@ class CreateSampleInvoice(models.Model):
                 # Create invoice logic goes here
                 # Example: invoice.create_invoice()
                 print(f"Creating invoice for Material ID {material} and Invoice ID {invoice.id}")
-            account_move_line.append((0,0,{'product_id': material.id,'report_no': report_no ,'price_unit': invoices_to_create[0].amount }))
+            account_move_line.append((0,0,{'product_id': material.product_variant_ids.id,'report_no': report_no ,'price_unit': invoices_to_create[0].amount }))
         
         created_invoice = self.env["account.move"].sudo().create({
             'partner_id': pending_invoices[0].customer.id,
