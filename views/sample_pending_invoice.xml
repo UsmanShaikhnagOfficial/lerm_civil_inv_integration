@@ -38,11 +38,13 @@
                     <button type="object" class="oe_highlight" name="open_create_invoice_wizard" string="Create Invoice" />
                 </header>
                 <field name="srf_id"/>
-                <field name="customer"/>
-                <field name="invoiced"/>
-                <field name="kes_no"/>
-                <field name="material_id"/>
-                <field name="pricelist"/>
+                <field name="customer" optional="show"/>
+                <field name="invoiced" optional="show"/>
+                <field name="kes_no" optional="show"/>
+                <field name="kes_date" optional="show"/>
+                <field name="material_id" optional="show"/>
+                <field name="amount" optional="show"/>
+                <field name="pricelist" optional="show"/>
             </tree>
         </field>
     </record> 
