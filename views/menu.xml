@@ -2,12 +2,23 @@
 <odoo>
 
     <record id="lerm_invoice_action" model="ir.actions.act_window">
-        <field name="name">Pending for Invoice</field>
+        <field name="name">Invoice Pending</field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">sample.pending.invoice</field>
         <field name="view_mode">tree,kanban,form</field>
         <field name="help" type="html">
-            <p class="o_view_nocontent_smiling_face">Pending for Invoice</p>
+            <p class="o_view_nocontent_smiling_face">Invoice Pending</p>
+        </field>
+
+    </record>
+     <record id="lerm_invoiced_action" model="ir.actions.act_window">
+        <field name="name">Invoiced</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">sample.pending.invoice</field>
+        <field name="view_mode">tree,kanban,form</field>
+        <field name="domain">[('invoiced','=','invoiced')]</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">Invoiced</p>
         </field>
 
     </record>
@@ -19,9 +30,15 @@
         sequence="30"  />
 
     <menuitem id="pending_for_invoice"
-        name="Pending for Invoice"
+        name="Invoice Pending"
         parent="lerm_invoicing"
         action="lerm_invoice_action"
         sequence="12" />
+
+    <menuitem id="invoiced_menu"
+        name="Invoiced"
+        parent="lerm_invoicing"
+        action="lerm_invoiced_action"
+        sequence="13" />
 
 </odoo>
